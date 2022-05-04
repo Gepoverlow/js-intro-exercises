@@ -9,8 +9,22 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  let age;
+  let gender;
+  let town;
 
-    // your code here
+  function askDetails() {
+    age = prompt("How old are you?");
+    gender = prompt("What is your gender?");
+    town = prompt("From which town are you?");
 
+    let isConfirmed = confirm(
+      `So you are ${age} years old, your gender is ${gender} and you come from a town called ${town}. Click on OK to confirm!`
+    );
+
+    isConfirmed ? null : askDetails();
+  }
+
+  askDetails();
 })();

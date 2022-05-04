@@ -9,8 +9,12 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  let response = prompt("Would you like some cake?");
 
-  // your code here
-
+  if (response.toLowerCase().trim() === "yes") {
+    alert("Congratulations!");
+  } else {
+    alert("More cake for me then :p");
+  }
 })();
