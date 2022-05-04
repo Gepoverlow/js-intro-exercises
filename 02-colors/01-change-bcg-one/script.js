@@ -9,8 +9,14 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  const colors = ["red", "green", "yellow", "blue"];
 
-    // your code here
+  const buttons = document.querySelectorAll(".button");
 
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", () => {
+      document.body.style.backgroundColor = colors[i];
+    });
+  }
 })();
