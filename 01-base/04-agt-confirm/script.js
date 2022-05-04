@@ -19,11 +19,17 @@
     gender = prompt("What is your gender?");
     town = prompt("From which town are you?");
 
-    let isConfirmed = confirm(
-      `So you are ${age} years old, your gender is ${gender} and you come from a town called ${town}. Click on OK to confirm!`
-    );
-
-    isConfirmed ? null : askDetails();
+    if (!age || !gender || !town) {
+      alert(
+        "Oops! It appears that one of the fields was empty. Lets do it again!"
+      );
+      askDetails();
+    } else {
+      let isConfirmed = confirm(
+        `So you are ${age} years old, your gender is ${gender} and you come from a town called ${town}. Click on OK to confirm!`
+      );
+      isConfirmed ? null : askDetails();
+    }
   }
 
   askDetails();
