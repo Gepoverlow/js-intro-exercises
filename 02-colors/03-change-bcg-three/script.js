@@ -9,8 +9,25 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  let runButton = document.getElementById("run");
+  runButton.addEventListener("click", () => {
+    let randomColor = generateRgb();
 
-    // your code here
+    document.body.style.backgroundColor = randomColor;
+  });
 
+  function generateRgb() {
+    let numberOne = generateNumber();
+    let numberTwo = generateNumber();
+    let numberThree = generateNumber();
+
+    let rgb = `rgb(${numberOne}, ${numberTwo}, ${numberThree})`;
+
+    return rgb;
+  }
+
+  function generateNumber() {
+    return Math.floor(Math.random() * (255 - 0 + 1) + 0);
+  }
 })();
