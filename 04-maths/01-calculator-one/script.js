@@ -12,91 +12,78 @@
 (function () {
   // to get the value of an input: document.getElementById("element-id").value
 
-  document.getElementById("addition").addEventListener("click", function () {
+  document.getElementById("add").addEventListener("click", function () {
     let operatorOne = parseInt(document.getElementById("op-one").value);
     let operatorTwo = parseInt(document.getElementById("op-two").value);
     // perform an addition
-    if (
-      operatorOne !== "" &&
-      !isNaN(operatorOne) &&
-      operatorTwo !== "" &&
-      !isNaN(operatorTwo)
-    ) {
+    if (validateInputs(operatorOne, operatorTwo)) {
       alert(add(operatorOne, operatorTwo));
     } else {
       alert("Empty fields and NaN are not allowed!");
     }
-
-    function add(x, y) {
-      return x + y;
-    }
   });
 
-  document
-    .getElementById("substraction")
-    .addEventListener("click", function () {
-      let operatorOne = parseInt(document.getElementById("op-one").value);
-      let operatorTwo = parseInt(document.getElementById("op-two").value);
-      // perform an addition
-      if (
-        operatorOne !== "" &&
-        !isNaN(operatorOne) &&
-        operatorTwo !== "" &&
-        !isNaN(operatorTwo)
-      ) {
-        alert(substract(operatorOne, operatorTwo));
-      } else {
-        alert("Empty fields and NaN are not allowed!");
-      }
-      // perform an substraction
-      function substract(x, y) {
-        return x - y;
-      }
-    });
-
-  document
-    .getElementById("multiplication")
-    .addEventListener("click", function () {
-      let operatorOne = parseInt(document.getElementById("op-one").value);
-      let operatorTwo = parseInt(document.getElementById("op-two").value);
-      // perform an addition
-      if (
-        operatorOne !== "" &&
-        !isNaN(operatorOne) &&
-        operatorTwo !== "" &&
-        !isNaN(operatorTwo)
-      ) {
-        alert(multiply(operatorOne, operatorTwo));
-      } else {
-        alert("Empty fields and NaN are not allowed!");
-      }
-      // perform an multiplication
-      function multiply(x, y) {
-        return x * y;
-      }
-    });
-
-  document.getElementById("division").addEventListener("click", function () {
+  document.getElementById("sub").addEventListener("click", function () {
     let operatorOne = parseInt(document.getElementById("op-one").value);
     let operatorTwo = parseInt(document.getElementById("op-two").value);
     // perform an addition
-    if (
-      operatorOne !== "" &&
-      !isNaN(operatorOne) &&
-      operatorTwo !== "" &&
-      !isNaN(operatorTwo)
-    ) {
+    if (validateInputs(operatorOne, operatorTwo)) {
+      alert(substract(operatorOne, operatorTwo));
+    } else {
+      alert("Empty fields and NaN are not allowed!");
+    }
+    // perform an substraction
+  });
+
+  document.getElementById("mul").addEventListener("click", function () {
+    let operatorOne = parseInt(document.getElementById("op-one").value);
+    let operatorTwo = parseInt(document.getElementById("op-two").value);
+    // perform an addition
+    if (validateInputs(operatorOne, operatorTwo)) {
+      alert(multiply(operatorOne, operatorTwo));
+    } else {
+      alert("Empty fields and NaN are not allowed!");
+    }
+    // perform an multiplication
+  });
+
+  document.getElementById("div").addEventListener("click", function () {
+    let operatorOne = parseInt(document.getElementById("op-one").value);
+    let operatorTwo = parseInt(document.getElementById("op-two").value);
+    // perform an addition
+    if (validateInputs(operatorOne, operatorTwo)) {
       divide(operatorOne, operatorTwo);
     } else {
       alert("Empty fields and NaN are not allowed!");
     }
     // perform an division
-    function divide(x, y) {
-      if (y !== 0) {
-        alert(x / y);
-      } else {
-        alert("You cant divide by 0");
-      }
-    }
   });
+
+  function add(x, y) {
+    return x + y;
+  }
+
+  function substract(x, y) {
+    return x - y;
+  }
+
+  function divide(x, y) {
+    if (y !== 0) {
+      alert(x / y);
+    } else {
+      alert("You cant divide by 0");
+    }
+  }
+
+  function multiply(x, y) {
+    return x * y;
+  }
+
+  function validateInputs(x, y) {
+    if (x !== "" && !isNaN(x) && y !== "" && !isNaN(y)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 })();
