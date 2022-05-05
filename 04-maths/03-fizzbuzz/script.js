@@ -9,8 +9,36 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  function logFizzBuzz() {
+    for (let i = 0; i <= 100; i++) {
+      if (checkMultipleThree(i) && checkMultipleFive(i)) {
+        console.log(`${i} - Fizz & Buzz`);
+      } else if (checkMultipleFive(i)) {
+        console.log(`${i} - Buzz`);
+      } else if (checkMultipleThree(i)) {
+        console.log(`${i} - Fizz`);
+      } else {
+        console.log(`${i} - FizzBuzz`);
+      }
+    }
+  }
 
-    // your code here
+  function checkMultipleThree(number) {
+    if (number % 3 === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
+  function checkMultipleFive(number) {
+    if (number % 5 === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  logFizzBuzz();
 })();
