@@ -15,21 +15,22 @@
   runButton.addEventListener("click", () => {
     let yearInput = document.getElementById("year").value;
 
-    function checkFriday(month, year) {
-      let someDate = new Date(month, year, null);
+    function checkTarget(year, month) {
+      let someDate = new Date(year, month, null);
 
-      let someDay = someDate.getDate();
+      let dayName = someDate.getDate();
+      let dayNumber = someDate.getDay();
 
-      console.log(someDate);
+      console.log(someDate, dayName, dayNumber);
 
-      if (someDay === 6) {
+      if (dayName === 5 && dayNumber === 13) {
         return true;
       } else {
         return false;
       }
     }
 
-    console.log(checkFriday(1, 1993));
+    console.log(checkTarget(1993));
 
     function daysInMonth(month, year) {
       return new Date(year, month, 0).getDate();
