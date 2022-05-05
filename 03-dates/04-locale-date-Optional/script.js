@@ -9,10 +9,38 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  const dateText = document.getElementById("target");
 
-    // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
+  function getDate() {
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
 
-    // your code here
+    let months = ["Jan", "Feb", "March", "April", "May"];
 
+    let today = new Date();
+
+    let dayName = days[today.getDay()];
+    let dayNumber = today.getDate();
+    let monthName = months[today.getMonth()];
+    let yearNumber = today.getFullYear();
+    let hourNumber = today.getHours();
+    let minutesNumber = today.getMinutes();
+    let secondsNumber = today.getSeconds();
+
+    let date = `${dayName} ${dayNumber} ${monthName} ${yearNumber}, ${hourNumber}h${minutesNumber}:${secondsNumber} `;
+
+    dateText.textContent = date;
+
+    setTimeout(getDate, 1000);
+  }
+
+  getDate();
 })();
