@@ -9,8 +9,30 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  let runButton = document.getElementById("run");
 
-    // your code here
+  runButton.addEventListener("click", () => {
+    let yearInput = document.getElementById("year").value;
 
+    function checkFriday(month, year) {
+      let someDate = new Date(month, year, null);
+
+      let someDay = someDate.getDate();
+
+      console.log(someDate);
+
+      if (someDay === 6) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    console.log(checkFriday(1, 1993));
+
+    function daysInMonth(month, year) {
+      return new Date(year, month, 0).getDate();
+    }
+  });
 })();
