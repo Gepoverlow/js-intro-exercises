@@ -10,6 +10,8 @@
 // You will have time to focus on it later.
 
 (function () {
+  //Store the message in a variable
   let alertMsg = "Hello, World!";
+  //Call the alert method and pass the message as parameter
   alert(alertMsg);
 })();

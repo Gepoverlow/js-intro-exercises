@@ -10,10 +10,14 @@
 // You will have time to focus on it later.
 
 (function () {
+  //Store a promptin a variable
   let name = prompt("What is your name?");
+  //Check if the variable is not null or undefined
   if (name) {
+    //if success calls the alert method
     alert(`Hello ${name}!`);
   } else {
+    //if not success it returns
     return;
   }
 })();
