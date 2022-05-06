@@ -15,25 +15,40 @@
   runButton.addEventListener("click", () => {
     let yearInput = document.getElementById("year").value;
 
-    function checkTarget(year, month) {
-      let someDate = new Date(year, month, null);
+    let months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
 
-      let dayName = someDate.getDate();
-      let dayNumber = someDate.getDay();
+    let result = [];
 
-      console.log(someDate, dayName, dayNumber);
+    function checkMonths(year) {
+      for (let i = 0; i <= 12; i++) {
+        let date = new Date(year, i, 13);
+        if (date.getDay() === 5) {
+          result.push(months[i]);
+        }
+      }
 
-      if (dayName === 5 && dayNumber === 13) {
-        return true;
+      if (yearInput >= 1970 && yearInput <= 2021 && !isNaN(yearInput)) {
+        alert(
+          `In the year ${yearInput} there where ${result.length} months in which a Friday the 13th happened: ${result}`
+        );
       } else {
-        return false;
+        alert(`Year must be a number between 1970 and 2021!`);
       }
     }
 
-    console.log(checkTarget(1993));
-
-    function daysInMonth(month, year) {
-      return new Date(year, month, 0).getDate();
-    }
+    checkMonths(yearInput);
   });
 })();
