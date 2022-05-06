@@ -15,9 +15,7 @@
   document.getElementById("run").addEventListener("click", function () {
     let numInput = document.getElementById("numbers").value;
 
-    let strArray = numInput.split(",");
-
-    let numArray = strArray.map((str) => {
+    let numArray = numInput.split(",").map((str) => {
       return Number(str);
     });
 
