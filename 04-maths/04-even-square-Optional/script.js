@@ -9,12 +9,25 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  document.getElementById("run").addEventListener("click", function () {
+    // your code here
 
-    document.getElementById("run").addEventListener("click", function() {
+    function displaySquare() {
+      let result = [];
 
-        // your code here
+      for (let i = 1; i <= 21; i++) {
+        calculateSquare(i);
+      }
 
-    });
+      function calculateSquare(number) {
+        let square = number * number;
+        result.push(square);
+      }
 
+      alert(result);
+    }
+
+    displaySquare();
+  });
 })();
