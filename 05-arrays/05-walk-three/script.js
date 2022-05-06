@@ -43,6 +43,10 @@
   const button = document.getElementById("run");
 
   button.addEventListener("click", () => {
-    people.forEach((person) => console.log(person.firstname));
+    people.forEach((person) =>
+      console.log(
+        `Firstname: ${person.firstname}. Lastname: ${person.lastname}.`
+      )
+    );
   });
 })();
