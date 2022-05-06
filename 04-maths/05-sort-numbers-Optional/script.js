@@ -9,14 +9,20 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // to get the value of an input: document.getElementById("element-id").value
 
-    // to get the value of an input: document.getElementById("element-id").value
+  document.getElementById("run").addEventListener("click", function () {
+    let numInput = document.getElementById("numbers").value;
 
-    document.getElementById("run").addEventListener("click", function() {
+    let strArray = numInput.split(",");
 
-        // your code here
-
+    let numArray = strArray.map((str) => {
+      return Number(str);
     });
 
+    let result = numArray.sort((a, b) => a - b);
+
+    alert(result);
+  });
 })();
