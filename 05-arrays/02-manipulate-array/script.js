@@ -9,21 +9,36 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  var fruits = [
+    "pomme",
+    "poire",
+    "fraise",
+    "tomate",
+    "orange",
+    "mandarine",
+    "durian",
+    "pêche",
+    "raisin",
+    "cerise",
+  ];
 
-    var fruits = [
-        "pomme",
-        "poire",
-        "fraise",
-        "tomate",
-        "orange",
-        "mandarine",
-        "durian",
-        "pêche",
-        "raisin",
-        "cerise",
-    ];
+  // your code here
 
-    // your code here
+  let button = document.getElementById("run");
 
+  button.addEventListener("click", () => {
+    //making a copy of fruits
+    let newArray = [...fruits];
+
+    //removing
+    newArray.shift();
+    newArray.pop();
+
+    //adding
+    newArray.unshift("banana");
+    newArray.push("kiwi");
+
+    alert(`Old Array: ${fruits}\nNew Array: ${newArray}`);
+  });
 })();
