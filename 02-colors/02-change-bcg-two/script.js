@@ -10,9 +10,13 @@
 // You will have time to focus on it later.
 
 (function () {
+  //Select the button
   let runButton = document.getElementById("run");
+  //Add a click event to the button
   runButton.addEventListener("click", () => {
+    //Grab the input value and storing it on a new variable
     let colorInput = document.getElementById("color").value;
+    //Assign the variable value to the bodys background
     document.body.style.backgroundColor = colorInput;
   });
 })();
