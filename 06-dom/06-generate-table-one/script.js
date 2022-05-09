@@ -9,8 +9,30 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
 
-    // your code here
+  const columns = 1;
+  const rows = 10;
 
+  const target = document.getElementById("target");
+
+  createTable(columns, rows);
+
+  function createTable(columns, rows) {
+    const table = document.createElement("table");
+    target.appendChild(table);
+
+    for (let i = 1; i <= rows; i++) {
+      let row = document.createElement("tr");
+
+      for (let i = 1; i <= columns; i++) {
+        let data = document.createElement("td");
+        data.textContent = `${i} Column`;
+        row.appendChild(data);
+      }
+
+      table.appendChild(row);
+    }
+  }
 })();
