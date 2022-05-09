@@ -9,23 +9,31 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  var fruits = [
+    "perry",
+    "strawberry",
+    "tomato",
+    "kiwi",
+    "banana",
+    "orange",
+    "apple",
+    "mandarin",
+    "durian",
+    "peach",
+    "grapes",
+    "cherry",
+  ];
 
-    var fruits = [
-        "apple",
-        "perry",
-        "strawberry",
-        "tomato",
-        "kiwi",
-        "banana",
-        "orange",
-        "mandarin",
-        "durian",
-        "peach",
-        "grapes",
-        "cherry",
-    ];
+  // your code here
 
-    // your code here
+  const button = document.getElementById("run");
 
+  button.addEventListener("click", () => {
+    if (fruits.includes("apple")) {
+      console.log("yes");
+    } else {
+      console.log("nope");
+    }
+  });
 })();
