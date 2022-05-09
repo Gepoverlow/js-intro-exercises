@@ -9,8 +9,20 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  const passwordInput = document.getElementById("pass-one");
+  const validity = document.getElementById("validity");
 
-    // your code here
+  passwordInput.addEventListener("keyup", validatePass);
 
+  function validatePass() {
+    let inputValue = passwordInput.value;
+    let passwordFormat = /(?:.*\d){2}/;
+
+    if (inputValue.length >= 8 && inputValue.match(passwordFormat)) {
+      validity.textContent = "ok";
+    } else {
+      validity.textContent = "not ok";
+    }
+  }
 })();
