@@ -9,8 +9,23 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
+  const button = document.getElementById("run");
 
-    // your code here
+  const passwordOne = document.getElementById("pass-one");
+  const passwordTwo = document.getElementById("pass-two");
 
+  button.addEventListener("click", () => {
+    let valueOne = passwordOne.value;
+    let valueTwo = passwordTwo.value;
+
+    if (valueOne !== valueTwo || !valueOne || !valueTwo) {
+      passwordOne.style.border = "1px solid red";
+      passwordTwo.style.border = "1px solid red";
+    } else {
+      passwordOne.style.border = "1px solid green";
+      passwordTwo.style.border = "1px solid green";
+    }
+  });
 })();
