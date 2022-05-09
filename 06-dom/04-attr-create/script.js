@@ -9,8 +9,13 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
+  const source = document.getElementById("source").getAttribute("data-image");
+  const figure = document.getElementById("target");
 
-    // your code here
+  let image = document.createElement("img");
+  image.src = source;
 
+  figure.appendChild(image);
 })();
