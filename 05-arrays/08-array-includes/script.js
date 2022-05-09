@@ -31,9 +31,9 @@
 
   button.addEventListener("click", () => {
     if (fruits.includes("apple")) {
-      console.log("yes");
+      console.log("Yes, there is an apple in the fruits array");
     } else {
-      console.log("nope");
+      console.log("No, there is no apple in the fruits array");
     }
   });
 })();
