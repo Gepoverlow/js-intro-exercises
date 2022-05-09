@@ -9,8 +9,17 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
+  const passwordInput = document.getElementById("pass-one");
+  const counter = document.getElementById("counter");
 
-    // your code here
+  passwordInput.addEventListener("keyup", updateCounter);
 
+  function updateCounter() {
+    let passwordValue = passwordInput.value;
+    let passwordLength = passwordValue.length;
+
+    counter.textContent = `${passwordLength}/10`;
+  }
 })();
