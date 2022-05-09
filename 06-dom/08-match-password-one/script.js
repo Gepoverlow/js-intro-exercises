@@ -10,7 +10,6 @@
 // You will have time to focus on it later.
 
 (function () {
-  // your code here
   const button = document.getElementById("run");
 
   const passwordOne = document.getElementById("pass-one");
