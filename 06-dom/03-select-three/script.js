@@ -9,8 +9,10 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
 
-    // your code here
+  const texts = document.querySelectorAll(".target");
 
+  texts.forEach((text) => (text.textContent = "Owned"));
 })();
