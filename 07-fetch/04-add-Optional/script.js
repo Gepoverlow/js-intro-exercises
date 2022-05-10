@@ -12,9 +12,9 @@
 (() => {
   // your code here
   const button = document.getElementById("run");
-  getHeroes("http://localhost:3000/heroes");
-
   let allHeroes = [];
+
+  getHeroes("http://localhost:3000/heroes");
 
   button.addEventListener("click", () => {
     displayHeroes(allHeroes);
@@ -50,8 +50,8 @@
     const newHero = {
       id: id,
       name: name,
-      alter: alter,
-      powers: powers.split(","),
+      alterEgo: alter,
+      abilities: powers.split(","),
     };
     return newHero;
   }
