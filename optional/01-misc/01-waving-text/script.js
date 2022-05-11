@@ -13,50 +13,57 @@
   // your code here
   const target = document.getElementById("target");
   const textContent = document.getElementById("target").textContent;
-  lettersIntoElements(textContent);
 
   function lettersIntoElements(string) {
-    let trimmed = string.trim();
-    let stringToArray = trimmed.split("");
+    const trimmed = string.trim();
+    const stringToArray = trimmed.split("");
     handleCreation(stringToArray);
-    handleAnimation();
   }
 
   function handleCreation(array) {
-    let p = document.createElement("p");
+    target.textContent = "";
+    const p = document.createElement("p");
     array.forEach((item) => createEm(item, p));
     target.appendChild(p);
   }
 
   function createEm(letter, parent) {
-    let em = document.createElement("em");
+    const em = document.createElement("em");
     em.className = "letters";
     em.textContent = letter;
-    em.style.display = "inline";
+    em.style.transition = "all 0.5s";
     parent.appendChild(em);
   }
 
   function handleAnimation() {
-    let allLetters = document.querySelectorAll(".letters");
+    const allLetters = document.querySelectorAll(".letters");
+
+    let lapse = 0;
+
+    for (let i = 0; i < allLetters.length; i++) {
+      setTimeout(() => animateLetter(allLetters[i]), lapse);
+      lapse = lapse + 25;
+    }
   }
 
-  function setSizeOne(letter) {
-    letter.style.fontSize = "20px";
+  function animateLetter(letter) {
+    setTimeout(() => (letter.style.fontSize = "25px"), 50);
+    setTimeout(() => (letter.style.fontSize = "30px"), 100);
+    setTimeout(() => (letter.style.fontSize = "35px"), 150);
+    setTimeout(() => (letter.style.fontSize = "40px"), 200);
+    setTimeout(() => (letter.style.fontSize = "45px"), 250);
+    setTimeout(() => (letter.style.fontSize = "40px"), 300);
+    setTimeout(() => (letter.style.fontSize = "35px"), 350);
+    setTimeout(() => (letter.style.fontSize = "30px"), 400);
+    setTimeout(() => (letter.style.fontSize = "25px"), 450);
+    setTimeout(() => (letter.style.fontSize = "20px"), 500);
+
+    setTimeout(
+      () => (letter.style.fontSize === "20px" ? animateLetter(letter) : null),
+      550
+    );
   }
 
-  function setSizeTwo(letter) {
-    letter.style.fontSize = "20px";
-  }
-
-  function setSizeThree(letter) {
-    letter.style.fontSize = "20px";
-  }
-
-  function setSizeOne(letter) {
-    letter.style.fontSize = "20px";
-  }
-
-  function setSizeOne(letter) {
-    letter.style.fontSize = "20px";
-  }
+  lettersIntoElements(textContent);
+  handleAnimation();
 })();
