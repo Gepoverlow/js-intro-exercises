@@ -21,7 +21,7 @@
   // your code here
 
   const button = document.getElementById("next");
-  const image = document.getElementById("image");
+  const image = document.querySelector('img[alt="Carousel"]');
 
   let index = 1;
 
