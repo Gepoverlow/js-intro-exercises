@@ -9,8 +9,12 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
+  const slider = document.getElementById("slider");
+  const target = document.getElementById("target");
 
-    // your code here
-
+  slider.addEventListener("input", () => {
+    target.textContent = `0${slider.value}`;
+  });
 })();
