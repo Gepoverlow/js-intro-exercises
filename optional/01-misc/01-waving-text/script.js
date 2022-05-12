@@ -16,14 +16,15 @@
 
   function lettersIntoEms(string) {
     const trimmedString = string.trim();
-    const stringToArray = trimmedString.split("");
+    const replacedString = trimmedString.replace(/\s\s+/g, " ");
+    const stringToArray = replacedString.split("");
+
     handleElementCreation(stringToArray);
   }
 
   function handleElementCreation(array) {
     target.textContent = "";
     const p = document.createElement("p");
-    p.style.height = "100%"
     array.forEach((item) => createEm(item, p));
     target.appendChild(p);
   }
@@ -46,7 +47,16 @@
   }
 
   function animateLetter(letter) {
-    let sizes = ["25px", "30px","35px", "40px", "35px", "30px","25px", "20px"];
+    let sizes = [
+      "25px",
+      "30px",
+      "35px",
+      "40px",
+      "35px",
+      "30px",
+      "25px",
+      "20px",
+    ];
     let time = 50;
     for (let i = 0; i < 10; i++) {
       setTimeout(() => (letter.style.fontSize = sizes[i]), time);
